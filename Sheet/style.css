@@ -20,7 +20,7 @@ input.sheet-checkbox-reap-items:not(:checked) ~ textarea.sheet-textarea-itemdesc
 }
 
 input.sheet-checkbox-reap-rolls:not(:checked) ~ textarea.sheet-textarea-rollformula,
-input.sheet-checkbox-reap-rolls:not(:checked) ~ input.sheet-rolls-name, {
+input.sheet-checkbox-reap-rolls:not(:checked) ~ input.sheet-rolls-name {
     display: none;
 }
 
