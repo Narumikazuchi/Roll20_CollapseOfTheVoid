@@ -1,0 +1,29 @@
+h3.sheet-h3-header {
+    text-align: center;
+}
+
+div.sheet-bg-red {
+    width: 100%;
+    background-color: crimson;
+}
+
+div.sheet-div-stats {
+    display: none;
+}
+
+input.sheet-checkbox-stats:checked ~ div.sheet-div-stats {
+    display: block;
+}
+
+input.sheet-checkbox-reap-items:not(:checked) ~ textarea.sheet-textarea-itemdesc {
+    display: none;
+}
+
+input.sheet-checkbox-reap-rolls:not(:checked) ~ textarea.sheet-textarea-rollformula,
+input.sheet-checkbox-reap-rolls:not(:checked) ~ input.sheet-rolls-name, {
+    display: none;
+}
+
+input.sheet-checkbox-reap-rolls {
+    float: right;
+}
