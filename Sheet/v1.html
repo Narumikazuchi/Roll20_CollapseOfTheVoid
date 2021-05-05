@@ -1,0 +1,91 @@
+<div class="sheet-bg-red">
+    <h3 class="sheet-h3-header">Charakter Status</h3>
+</div>
+<hr/>
+<p>
+    Gesundheit: <span class="sheet-span-healthtext" name="attr_HealthState"></span>
+    <div class="sheet-break"></div>
+    <input class="sheet-checkbox-stats" type="checkbox">Zeige kompletten Status</input>
+    <div class="sheet-break"></div>
+    <div class="sheet-break"></div>
+    <div class="sheet-div-stats">
+        <hr/>
+        Rasse: <span name="attr_Race"></span>
+        <div class="sheet-2colrow">
+            <div class="sheet-col">
+                Waffe: <span name="attr_WeaponName"></span>
+            </div>
+            <div class="sheet-col">
+                Magie: <span name="attr_MagicName"></span>
+            </div>
+        </div>
+        <hr/>
+        <table style="width:100%;">
+            <tr>
+                <td><button type="roll" name="roll_Fitness" value="!attribute(@{character_id},Fitness)"></button>Fitness:</td>
+                <td><span name="attr_Fitness"></span></td>
+                <td><button type="roll" name="roll_Negotiate" value="!attribute(@{character_id},Verhandeln)"></button>Verhandeln:</td>
+                <td><span name="attr_Negotiate"></span></td>
+            </tr>
+            <tr>
+                <td><button type="roll" name="roll_Strength" value="!attribute(@{character_id},Körperkraft)"></button>Körperkraft:</td>
+                <td><span name="attr_Strength"></span></td>
+                <td><button type="roll" name="roll_Bluff" value="!attribute(@{character_id},Bluffen)"></button>Bluffen:</td>
+                <td><span name="attr_Bluff"></span></td>
+            </tr>
+            <tr>
+                <td><button type="roll" name="roll_Sturdiness" value="!attribute(@{character_id},Robustheit)"></button>Robustheit:</td>
+                <td><span name="attr_Sturdiness"></span></td>
+                <td><button type="roll" name="roll_Language" value="!attribute(@{character_id},Sprache)"></button>Sprache:</td>
+                <td><span name="attr_Language"></span></td>
+            </tr>
+            <tr>
+                <td><button type="roll" name="roll_Agility" value="!attribute(@{character_id},Agilität)"></button>Agilität:</td>
+                <td><span name="attr_Agility"></span></td>
+                <td><button type="roll" name="roll_Handle" value="!attribute(@{character_id},Umgang)"></button>Umgang:</td>
+                <td><span name="attr_Handle"></span></td>
+            </tr>
+            <tr>
+                <td><button type="roll" name="roll_Dexterity" value="!attribute(@{character_id},Geschick)"></button>Geschick:</td>
+                <td><span name="attr_Dexterity"></span></td>
+                <td><button type="roll" name="roll_Hide" value="!attribute(@{character_id},Verbergen)"></button>Verbergen:</td>
+                <td><span name="attr_Hide"></span></td>
+            </tr>
+            <tr>
+                <td><button type="roll" name="roll_Concentration" value="!attribute(@{character_id},Konzentration)"></button>Konzentration:</td>
+                <td><span name="attr_Concentration"></span></td>
+                <td><button type="roll" name="roll_Search" value="!attribute(@{character_id},Suchen)"></button>Suchen:</td>
+                <td><span name="attr_Search"></span></td>
+            </tr>
+            <tr>
+                <td><button type="roll" name="roll_Creativity" value="!attribute(@{character_id},Kreativität)"></button>Kreativität:</td>
+                <td><span name="attr_Creativity"></span></td>
+                <td><button type="roll" name="roll_Collect" value="!attribute(@{character_id},Sammeln)"></button>Sammeln:</td>
+                <td><span name="attr_Collect"></span></td>
+            </tr>
+        </table>
+    </div>
+</p>
+<hr/>
+<p>
+    <div class="sheet-2colrow">
+        <div class="sheet-col">
+            <button type="roll" name="roll_SimpleStrike" value="!simplestrike(@{character_id},@{target|Ziel?|character_id},?{Sicherer Treffer?|Nein,false|Ja,true})"></button>
+            <span>Einfacher Angriff</span>
+            <div class="sheet-break"></div>
+            <button type="roll" name="roll_ComplexStrike" value="!complexstrike(@{character_id},@{target|Ziel?|character_id},?{Sicherer Treffer?|Nein,false|Ja,true})"></button>
+            <span>Schwieriger Angriff</span>
+        </div>
+        <div class="sheet-col">
+            <fieldset class="repeating_rollfield">
+                <button class="sheet-roll-damageroll" type="roll" name="roll_SkillRoll" value="@{SkillRollFormula}"></button>
+                <span name="attr_SkillRollName"></span>
+                <input class="sheet-checkbox-reap-rolls" type="checkbox">
+                <div class="sheet-break"></div>
+                <input class="sheet-rolls-name" type="text" name="attr_SkillRollName" placeholder="Name der Fähigkeit">
+                <div class="sheet-break"></div>
+                <textarea class="sheet-textarea-rollformula" name="attr_SkillRollFormula" placeholder="API func call"></textarea>
+            </fieldset>
+        </div>
+    </div>
+</p>
